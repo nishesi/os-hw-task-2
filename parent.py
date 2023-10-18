@@ -10,12 +10,12 @@ def child(sleep_time):
     time.sleep(sleep_time)
     print("Child[{0}]: I am ended. PID {0}. Parent PID {1}".format(os.getpid(), os.getppid()))
     code = random.randint(0, 1)
-    exit(code)
+    os._exit(code)
 
 
 if len(sys.argv) < 2:
     print("Set the children number")
-    exit(1)
+    os._exit(1)
 count = int(sys.argv[1])
 parent_pid = os.getpid()
 
